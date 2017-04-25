@@ -1,0 +1,11 @@
+even
+odd
+prime
+plus
+minus
+integration
+differentiation
+vectors
+complex
+
+
