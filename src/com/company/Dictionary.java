@@ -7,14 +7,14 @@ import java.util.Scanner;
  * Created by Amr on 4/23/2017.
  */
 public class Dictionary {
-
     private AvlTree tree;
     private Scanner scan;
-
     public void setTree(AvlTree tree) {this.tree = tree;}
 
     public void addFileToDictionary(){
         try {
+            //gui.print.setText();
+
             scan = new Scanner(new File("Dictionary.txt"));
             while (scan.hasNext()) {
                 String temp = scan.next();
