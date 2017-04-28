@@ -1,22 +1,21 @@
 package com.company;
 
-import javax.swing.*;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         AvlTree avl = new AvlTree();
         Avl_Gui x = new Avl_Gui();
         Dictionary dic = new Dictionary();
         dic.setTree(avl);
         System.out.println("\t\t\tEnter what option you want: ");
-        System.out.print("1-Add Dictionary.txt to AVL.\n"+"2-Search queries.txt in AVL.\n"+
-                         "3-Delete some words from AVL.\n"+"4-Insert 1 word in the AVL.\n"+
-                         "5-Search 1 word in the AVL.\n"+"6-Delete 1 word from AVL.\n"+
-                         "7-print number of words in the AVL\n"+"8-Print height of the AVL\n"+"9-GUI\n"+
-                         "0-END TESTING\n");
+        System.out.print("1-Add Dictionary.txt to AVL.\n" + "2-Search queries.txt in AVL.\n" +
+                "3-Delete some words from AVL.\n" + "4-Insert 1 word in the AVL.\n" +
+                "5-Search 1 word in the AVL.\n" + "6-Delete 1 word from AVL.\n" +
+                "7-print number of words in the AVL\n" + "8-Print height of the AVL\n" + "9-GUI\n" +
+                "0-END TESTING\n");
         Scanner scan = new Scanner(System.in);
         int option = scan.nextInt();
         while (option != 0) {
@@ -49,16 +48,16 @@ public class Main {
                     dic.deleteWord(scan.nextLine());
                     break;
                 }
-                case 7:{
-                    System.out.println(dic.dictionarySize()+" words in the AVL");
+                case 7: {
+                    System.out.println(dic.dictionarySize() + " words in the AVL");
                     break;
                 }
-                case 8:{
+                case 8: {
                     dic.dictionaryHeight();
                     break;
                 }
-                case 9:{
-
+                case 9: {
+                    x.pack();
                     x.setVisible(true);
                     break;
                 }

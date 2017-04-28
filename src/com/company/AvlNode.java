@@ -9,13 +9,13 @@ public class AvlNode<type> {
     type data;
     int height;
 
-    public int getHeight() {
-        return height;
-    }
-
     public AvlNode(type data) {
         this.data = data;
         left = right = null;
-        height =0;
+        height = 0;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }

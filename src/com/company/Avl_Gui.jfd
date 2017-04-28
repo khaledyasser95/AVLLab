@@ -9,11 +9,17 @@ new FormModel {
 			"minimumSize": new java.awt.Dimension( 10, 30 )
 			"defaultCloseOperation": 3
 			"$sizePolicy": 1
+			"title": "Avl_Lab"
+			"type": enum java.awt.Window$Type POPUP
+			"$locationPolicy": 1
+			"autoRequestFocus": false
+			"background": new java.awt.Color( 153, 204, 255, 255 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {space :::p, par l {seq t {comp words:::::x, space :::p, comp textArea5:::p:181:p}, seq l {comp height:::p:77:p, space u:::p, comp textArea6:::::x}, seq l {comp label1:::p::p, space :::p, comp textArea7:::p:212:p, space :0:0:x}, seq t {par t {comp Remove::l:::x, comp Insert::t:::x, comp Find::l:::x, comp Add::l:p:122:p}, space :::p, par l {seq {comp Search:::p:125:p, space :::p, comp Delete_some:::p::p}, par l {comp insert_txt::t:p:225:p, comp search_txt::l:p:225:p, comp delete_txt::l:p:225:p}}}}, space :::p}}"
-				"$verticalGroup": "par l {seq l {space u:::p, par b {comp Add::b:p::p, comp Search::b:p::p, comp Delete_some::b:p::p}, space :::p, par l:::p {comp Insert:::::x, comp insert_txt:::::x}, space :::p, par t {comp search_txt:::p:32:p, comp Find:::p::p}, space :::p, par l:::p {comp Remove:::::x, comp delete_txt:::::x}, space :::p, par l {comp textArea5:::p:28:p, comp words:::p:28:p}, space :::p, par l {comp height:::p::p, comp textArea6:::p:32:p}, space :::p, par b {comp label1::b:p::p, comp textArea7::b:p::p}, space ::8:x}}"
+				"$horizontalGroup": "par l {seq l {space :::p, par l {seq t {par t {comp Remove::l:::x, comp Insert::t:::x, comp Find::l::127:x, comp Add::l:p:122:p}, space :::p, par l:::p {seq {comp Search:::p:125:p, space :::p, comp Delete_some:::p::p}, comp search_txt::l::206:x, comp insert_txt::l::206:x, comp delete_txt::l::206:x}}, seq {par t {seq {space :6:6:p, comp label1:::p::p, space :::p, comp Action::::231:x}, seq t {comp words:::::x, space :::p, comp height:::p:144:p}}, space :::p}}}}"
+				"$verticalGroup": "par l {seq l {space u:::p, par b {comp Add::b:p::p, comp Search::b:p::p, comp Delete_some::b:p::p}, space :::p, par l {comp Insert:::p::p, comp insert_txt:::::x}, space :::p, par t {comp Find:::p::p, comp search_txt:::p:32:p}, space :::p, par l {comp Remove:::p::p, comp delete_txt:::::x}, space :::p, par b {comp words::b:p:28:p, comp height::b:p::p}, space :::p, par b {comp label1::b:p::p, comp Action::b:p::p}, space :p:42:p}}"
 			} ) {
 				name: "but_panel"
+				"background": sfield java.awt.Color gray
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "Search"
 					"text": "Search queries"
@@ -42,10 +48,12 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "words"
 					"text": "number of words"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "wordsActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "height"
 					"text": "height"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "heightActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JTextArea" ) {
 					name: "search_txt"
@@ -56,18 +64,13 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JTextArea" ) {
 					name: "delete_txt"
 				} )
-				add( new FormComponent( "javax.swing.JTextArea" ) {
-					name: "textArea5"
-				} )
-				add( new FormComponent( "javax.swing.JTextArea" ) {
-					name: "textArea6"
-				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label1"
 					"text": "ACTION TAKEN :"
 				} )
 				add( new FormComponent( "javax.swing.JTextArea" ) {
-					name: "textArea7"
+					name: "Action"
+					"editable": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "Add"
@@ -76,30 +79,31 @@ new FormModel {
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 345
-				"height": 255
+				"height": 220
 				"x": 5
 				"y": 0
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space :0:1:x, comp scrollPane2:::p:294:p}}"
-				"$verticalGroup": "par l {seq l {space :::p, comp scrollPane2:::::x, space :::p}}"
+				"$horizontalGroup": "par l {seq l {comp scrollPane1:::p:343:p, space :0:2:x}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1::::209:x}}"
 			} ) {
 				name: "panel1"
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-					name: "scrollPane2"
-					add( new FormComponent( "javax.swing.JTextPane" ) {
+					name: "scrollPane1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
 						name: "Print"
+						"editable": false
 					} )
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-				"width": 295
-				"height": 260
+				"width": 345
+				"height": 215
 				"x": 355
 				"y": 0
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 660, 290 )
+			"size": new java.awt.Dimension( 715, 260 )
 		} )
 	}
 }
