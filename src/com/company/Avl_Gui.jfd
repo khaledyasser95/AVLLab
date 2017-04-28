@@ -13,13 +13,13 @@ new FormModel {
 			"type": enum java.awt.Window$Type POPUP
 			"$locationPolicy": 1
 			"autoRequestFocus": false
-			"background": new java.awt.Color( 153, 204, 255, 255 )
+			"foreground": new java.awt.Color( 60, 63, 65, 255 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {seq l {space :::p, par l {seq t {par t {comp Remove::l:::x, comp Insert::t:::x, comp Find::l::127:x, comp Add::l:p:122:p}, space :::p, par l:::p {seq {comp Search:::p:125:p, space :::p, comp Delete_some:::p::p}, comp search_txt::l::206:x, comp insert_txt::l::206:x, comp delete_txt::l::206:x}}, seq {par t {seq {space :6:6:p, comp label1:::p::p, space :::p, comp Action::::231:x}, seq t {comp words:::::x, space :::p, comp height:::p:144:p}}, space :::p}}}}"
 				"$verticalGroup": "par l {seq l {space u:::p, par b {comp Add::b:p::p, comp Search::b:p::p, comp Delete_some::b:p::p}, space :::p, par l {comp Insert:::p::p, comp insert_txt:::::x}, space :::p, par t {comp Find:::p::p, comp search_txt:::p:32:p}, space :::p, par l {comp Remove:::p::p, comp delete_txt:::::x}, space :::p, par b {comp words::b:p:28:p, comp height::b:p::p}, space :::p, par b {comp label1::b:p::p, comp Action::b:p::p}, space :p:42:p}}"
 			} ) {
 				name: "but_panel"
-				"background": sfield java.awt.Color gray
+				"foreground": sfield java.awt.Color darkGray
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "Search"
 					"text": "Search queries"
@@ -88,11 +88,14 @@ new FormModel {
 				"$verticalGroup": "par l {seq l {space :::p, comp scrollPane1::::209:x}}"
 			} ) {
 				name: "panel1"
+				"foreground": new java.awt.Color( 60, 63, 65, 255 )
 				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 					name: "scrollPane1"
 					add( new FormComponent( "javax.swing.JTextArea" ) {
 						name: "Print"
 						"editable": false
+						"background": sfield java.awt.SystemColor window
+						"foreground": new java.awt.Color( 60, 63, 65, 255 )
 					} )
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
@@ -103,7 +106,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 715, 260 )
+			"size": new java.awt.Dimension( 715, 255 )
 		} )
 	}
 }

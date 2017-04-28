@@ -17,6 +17,7 @@ public class Avl_Gui extends JFrame {
     Dictionary dic = new Dictionary(this);
     public Avl_Gui() {
         initComponents();
+        dic.setTree(avl);
     }
 
     private void AddActionPerformed(ActionEvent e) {
@@ -95,11 +96,11 @@ public class Avl_Gui extends JFrame {
     private JPanel panel1;
     private JScrollPane scrollPane1;
     private JTextArea Print;
-
-
+    // JFormDesigner - End of variables declaration  //GEN-END:variables
 
     private void initComponents() {
-
+        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - k y
         but_panel = new JPanel();
         Search = new JButton();
         Delete_some = new JButton();
@@ -124,23 +125,21 @@ public class Avl_Gui extends JFrame {
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("Avl_Lab");
         setType(Window.Type.POPUP);
+        setAutoRequestFocus(false);
+        setForeground(new Color(60, 63, 65));
         Container contentPane = getContentPane();
         contentPane.setLayout(null);
 
         //======== but_panel ========
         {
+            but_panel.setForeground(Color.darkGray);
 
             // JFormDesigner evaluation mark
             but_panel.setBorder(new javax.swing.border.CompoundBorder(
-                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                            java.awt.Color.red), but_panel.getBorder()));
-            but_panel.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-                public void propertyChange(java.beans.PropertyChangeEvent e) {
-                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
-                }
-            });
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), but_panel.getBorder())); but_panel.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
 
             //---- Search ----
@@ -184,67 +183,67 @@ public class Avl_Gui extends JFrame {
             GroupLayout but_panelLayout = new GroupLayout(but_panel);
             but_panel.setLayout(but_panelLayout);
             but_panelLayout.setHorizontalGroup(
-                    but_panelLayout.createParallelGroup()
+                but_panelLayout.createParallelGroup()
+                    .addGroup(but_panelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(but_panelLayout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, but_panelLayout.createSequentialGroup()
+                                .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Remove, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Insert, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Find, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                    .addComponent(Add, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(but_panelLayout.createSequentialGroup()
+                                        .addComponent(Search, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Delete_some))
+                                    .addComponent(search_txt, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                    .addComponent(insert_txt, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                                    .addComponent(delete_txt, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)))
                             .addGroup(but_panelLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(but_panelLayout.createParallelGroup()
-                                            .addGroup(GroupLayout.Alignment.TRAILING, but_panelLayout.createSequentialGroup()
-                                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(Remove, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(Insert, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                            .addComponent(Find, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
-                                                            .addComponent(Add, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE))
-                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                            .addGroup(but_panelLayout.createSequentialGroup()
-                                                                    .addComponent(Search, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-                                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                                    .addComponent(Delete_some))
-                                                            .addComponent(search_txt, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                                            .addComponent(insert_txt, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
-                                                            .addComponent(delete_txt, GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)))
-                                            .addGroup(but_panelLayout.createSequentialGroup()
-                                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                            .addGroup(but_panelLayout.createSequentialGroup()
-                                                                    .addGap(6, 6, 6)
-                                                                    .addComponent(label1)
-                                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                                    .addComponent(Action, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
-                                                            .addGroup(but_panelLayout.createSequentialGroup()
-                                                                    .addComponent(words, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                                    .addComponent(height, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
-                                                    .addContainerGap())))
+                                .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                    .addGroup(but_panelLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(label1)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Action, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
+                                    .addGroup(but_panelLayout.createSequentialGroup()
+                                        .addComponent(words, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(height, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
+                                .addContainerGap())))
             );
             but_panelLayout.setVerticalGroup(
-                    but_panelLayout.createParallelGroup()
-                            .addGroup(but_panelLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(Add)
-                                            .addComponent(Search)
-                                            .addComponent(Delete_some))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(but_panelLayout.createParallelGroup()
-                                            .addComponent(Insert)
-                                            .addComponent(insert_txt))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                            .addComponent(Find)
-                                            .addComponent(search_txt, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(but_panelLayout.createParallelGroup()
-                                            .addComponent(Remove)
-                                            .addComponent(delete_txt))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(words, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(height))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(label1)
-                                            .addComponent(Action, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(42, 42, 42))
+                but_panelLayout.createParallelGroup()
+                    .addGroup(but_panelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(Add)
+                            .addComponent(Search)
+                            .addComponent(Delete_some))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(but_panelLayout.createParallelGroup()
+                            .addComponent(Insert)
+                            .addComponent(insert_txt))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                            .addComponent(Find)
+                            .addComponent(search_txt, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(but_panelLayout.createParallelGroup()
+                            .addComponent(Remove)
+                            .addComponent(delete_txt))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(words, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(height))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(label1)
+                            .addComponent(Action, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42))
             );
         }
         contentPane.add(but_panel);
@@ -252,28 +251,31 @@ public class Avl_Gui extends JFrame {
 
         //======== panel1 ========
         {
+            panel1.setForeground(new Color(60, 63, 65));
 
             //======== scrollPane1 ========
             {
 
                 //---- Print ----
                 Print.setEditable(false);
+                Print.setBackground(SystemColor.window);
+                Print.setForeground(new Color(60, 63, 65));
                 scrollPane1.setViewportView(Print);
             }
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
-                    panel1Layout.createParallelGroup()
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 343, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(0, 2, Short.MAX_VALUE))
+                panel1Layout.createParallelGroup()
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 343, GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 2, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
-                    panel1Layout.createParallelGroup()
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
+                panel1Layout.createParallelGroup()
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(scrollPane1, GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
             );
         }
         contentPane.add(panel1);
@@ -281,7 +283,7 @@ public class Avl_Gui extends JFrame {
 
         { // compute preferred size
             Dimension preferredSize = new Dimension();
-            for (int i = 0; i < contentPane.getComponentCount(); i++) {
+            for(int i = 0; i < contentPane.getComponentCount(); i++) {
                 Rectangle bounds = contentPane.getComponent(i).getBounds();
                 preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
                 preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
@@ -292,13 +294,8 @@ public class Avl_Gui extends JFrame {
             contentPane.setMinimumSize(preferredSize);
             contentPane.setPreferredSize(preferredSize);
         }
-        setSize(715, 260);
+        setSize(715, 255);
         setLocationRelativeTo(null);
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
-        dic.setTree(avl);
-
     }
-
-
-    // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
