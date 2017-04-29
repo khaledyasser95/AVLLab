@@ -7,103 +7,104 @@ import java.util.Scanner;
  * Created by Amr on 4/23/2017.
  */
 public class Dictionary {
+
     private AvlTree tree;
     private Scanner scan;
-    private Avl_Gui gui;
 
-    public Dictionary() {
-    }
+    public void setTree(AvlTree tree) {this.tree = tree;}
 
-    public Dictionary(Avl_Gui gui) {
-        this.gui = gui;
-    }
-
-    public void setTree(AvlTree tree) {
-        this.tree = tree;
-    }
-
-    public void addFileToDictionary() {
+    public void addFileToDictionary(){
         try {
-
             scan = new Scanner(new File("Dictionary.txt"));
             while (scan.hasNext()) {
                 String temp = scan.next();
                 tree.insert(temp);
-                gui.text_add(temp + " Added to the DICTIONARY, ");
-                gui.text("Size of the Dictionary " + tree.countNodes() + " Height of the tree " + tree.getRoot().getHeight());
+                System.out.print(temp+" Added to the DICTIONARY, ");
+                System.out.println("Size of the Dictionary "+tree.countNodes()+" Height of the tree "+tree.getRoot().getHeight());
             }
-        } catch (Exception e) {
-            gui.text("error reading the file");
+        }catch (Exception e) {
+            System.out.println("error reading the file");
         }
     }
 
-    public void addWord(String word) {
+    public void addWord(String word){
         tree.insert(word);
-        gui.text(word + " Added");
-        gui.text("Size of the Dictionary " + tree.countNodes() + " Height of the tree " + tree.getRoot().getHeight());
+        System.out.println(word+" Added");
+        System.out.println("Size of the Dictionary "+tree.countNodes()+" Height of the tree "+tree.getRoot().getHeight());
     }
 
-    public void searchDictionary() {
+    public void searchDictionary(){
         try {
             scan = new Scanner(new File("queries.txt"));
             while (scan.hasNext()) {
                 String temp = scan.next();
-                if (tree.search(temp))
-                    gui.text(temp + " FOUND");
+                if(tree.search(temp))
+                    System.out.println(temp+ " FOUND");
                 else
-                    gui.text(temp + " NOT FOUND");
+                    System.out.println(temp +" NOT FOUND");
             }
-        } catch (Exception e) {
-            gui.text("error reading the file");
+        }catch (Exception e) {
+            System.out.println("ERROR reading the file");
         }
     }
 
-    public void searchWord(String word) {
-        if (tree.search(word))
-            gui.text(word + " FOUND");
+    public void searchWord(String word){
+        if(tree.search(word))
+            System.out.println(word+" FOUND");
         else
-            gui.text(word + " NOT FOUND");
+            System.out.println(word+" NOT FOUND");
     }
 
-    public void deleteQueries() {
+    public void deleteQueries(){
         try {
             scan = new Scanner(new File("deletions.txt"));
             while (scan.hasNext()) {
                 String temp = scan.next();
-                if (tree.search(temp)) {
+                if(tree.search(temp)) {
                     tree.delete(temp);
-                    gui.text(temp + " DELETED");
-                    gui.text("Size of the Dictionary " + tree.countNodes() + " Height of the tree " + tree.getRoot().getHeight());
-                } else {
-                    gui.text(temp + " NOT FOUND to be deleted");
-                    gui.text("Size of the Dictionary " + tree.countNodes() + " Height of the tree " + tree.getRoot().getHeight());
+                    System.out.println(temp+" DELETED");
                 }
+                else
+                    System.out.println(temp + " NOT FOUND to be deleted");
+                System.out.println("Size of the Dictionary "+tree.countNodes()+" Height of the tree "+tree.getRoot().getHeight());
             }
-        } catch (Exception e) {
-            gui.text("ERROR reading the file");
+        }catch (Exception e) {
+            System.out.println("ERROR reading the file");
         }
     }
 
-    public void deleteWord(String word) {
-        if (tree.search(word)) {
+    public void deleteWord(String word){
+        if(tree.search(word)){
             tree.delete(word);
-            gui.text(word + " DELETED");
-            gui.text("Size of the Dictionary " + tree.countNodes() + " Height of the tree " + tree.getRoot().getHeight());
-        } else {
-            gui.text(word + " NOT FOUND to be deleted");
-            gui.text("Size of the Dictionary " + tree.countNodes() + " Height of the tree " + tree.getRoot().getHeight());
+            System.out.println(word+" DELETED");
         }
+        else
+            System.out.println(word + " NOT FOUND to be deleted");
+        System.out.println("Size of the Dictionary "+tree.countNodes()+" Height of the tree "+tree.getRoot().getHeight());
     }
 
-    public int dictionarySize() {
+    public int dictionarySize(){
         return tree.countNodes();
     }
 
-    public void dictionaryHeight() {
+    public  void dictionaryHeight(){
         try {
-            gui.text("Height of AVL : " + String.valueOf(tree.getRoot().getHeight()));
-        } catch (Exception e) {
-            gui.text("Empty AVL of height ZERO");
+            System.out.println("Height of the AVL tree is "+tree.getRoot().getHeight());
+        }catch (Exception e){
+            System.out.println("Empty AVL of height ZERO");
+        }
+    }
+
+    public void inOrderTraversal( AvlNode node){
+        if(tree.countNodes()==0){
+            System.out.println("EMPTY DICTIONARY");
+            return;
+        }
+        if(node != null)
+        {
+            inOrderTraversal(node.left);
+            System.out.println(node.data);
+            inOrderTraversal(node.right);
         }
     }
 }
