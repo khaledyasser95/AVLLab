@@ -14,7 +14,7 @@ public class Main {
                          "3-Delete some words from AVL.\n"+"4-Insert 1 word in the AVL.\n"+
                          "5-Search 1 word in the AVL.\n"+"6-Delete 1 word from AVL.\n"+
                          "7-print number of words in the AVL\n"+"8-Print height of the AVL\n"+
-                         "9-Print the In Order Traversal\n"+"0-END TESTING\n");
+                         "9-Print the In Order Traversal\n"+"10-Gui\n"+"0-END TESTING\n");
         Scanner scan = new Scanner(System.in);
         int option = scan.nextInt();
         while (option != 0) {
@@ -57,6 +57,12 @@ public class Main {
                 }
                 case 9:{
                     dic.inOrderTraversal(avl.getRoot());
+                    break;
+                }
+                case 10:{
+                   Avl_Gui gui = new Avl_Gui();
+                   gui.pack();
+                   gui.setVisible(true);
                     break;
                 }
                 default:{

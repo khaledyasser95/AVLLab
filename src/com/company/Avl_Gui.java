@@ -24,7 +24,7 @@ public class Avl_Gui extends JFrame {
         // TODO add your code here
         dic.addFileToDictionary();
         Action.setText("Add");
-
+        Add.setEnabled(false);
     }
 
     private void SearchActionPerformed(ActionEvent e) {
@@ -77,6 +77,11 @@ public class Avl_Gui extends JFrame {
         Print.append("  " + txt + "\n");
         Print.append("     -------------------------------------------------\n");
     }
+
+    private void printingActionPerformed(ActionEvent e) {
+        // TODO add your code here
+        dic.inOrderTraversal(avl.getRoot());
+    }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - k y
     private JPanel but_panel;
@@ -93,6 +98,7 @@ public class Avl_Gui extends JFrame {
     private JLabel label1;
     private JTextArea Action;
     private JButton Add;
+    private JButton printing;
     private JPanel panel1;
     private JScrollPane scrollPane1;
     private JTextArea Print;
@@ -115,6 +121,7 @@ public class Avl_Gui extends JFrame {
         label1 = new JLabel();
         Action = new JTextArea();
         Add = new JButton();
+        printing = new JButton();
         panel1 = new JPanel();
         scrollPane1 = new JScrollPane();
         Print = new JTextArea();
@@ -163,7 +170,7 @@ public class Avl_Gui extends JFrame {
             Remove.addActionListener(e -> RemoveActionPerformed(e));
 
             //---- words ----
-            words.setText("number of words");
+            words.setText("Size");
             words.addActionListener(e -> wordsActionPerformed(e));
 
             //---- height ----
@@ -179,6 +186,10 @@ public class Avl_Gui extends JFrame {
             //---- Add ----
             Add.setText("Add Dictionery");
             Add.addActionListener(e -> AddActionPerformed(e));
+
+            //---- printing ----
+            printing.setText("Print Content");
+            printing.addActionListener(e -> printingActionPerformed(e));
 
             GroupLayout but_panelLayout = new GroupLayout(but_panel);
             but_panel.setLayout(but_panelLayout);
@@ -210,9 +221,11 @@ public class Avl_Gui extends JFrame {
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(Action, GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE))
                                     .addGroup(but_panelLayout.createSequentialGroup()
-                                        .addComponent(words, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(words, GroupLayout.PREFERRED_SIZE, 83, GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(height, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(height, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(printing, GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)))
                                 .addContainerGap())))
             );
             but_panelLayout.setVerticalGroup(
@@ -238,7 +251,8 @@ public class Avl_Gui extends JFrame {
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(words, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(height))
+                            .addComponent(height)
+                            .addComponent(printing))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(but_panelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(label1)

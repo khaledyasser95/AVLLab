@@ -15,8 +15,8 @@ new FormModel {
 			"autoRequestFocus": false
 			"foreground": new java.awt.Color( 60, 63, 65, 255 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :::p, par l {seq t {par t {comp Remove::l:::x, comp Insert::t:::x, comp Find::l::127:x, comp Add::l:p:122:p}, space :::p, par l:::p {seq {comp Search:::p:125:p, space :::p, comp Delete_some:::p::p}, comp search_txt::l::206:x, comp insert_txt::l::206:x, comp delete_txt::l::206:x}}, seq {par t {seq {space :6:6:p, comp label1:::p::p, space :::p, comp Action::::231:x}, seq t {comp words:::::x, space :::p, comp height:::p:144:p}}, space :::p}}}}"
-				"$verticalGroup": "par l {seq l {space u:::p, par b {comp Add::b:p::p, comp Search::b:p::p, comp Delete_some::b:p::p}, space :::p, par l {comp Insert:::p::p, comp insert_txt:::::x}, space :::p, par t {comp Find:::p::p, comp search_txt:::p:32:p}, space :::p, par l {comp Remove:::p::p, comp delete_txt:::::x}, space :::p, par b {comp words::b:p:28:p, comp height::b:p::p}, space :::p, par b {comp label1::b:p::p, comp Action::b:p::p}, space :p:42:p}}"
+				"$horizontalGroup": "par l {seq l {space :::p, par l {seq t {par t {comp Remove::l:::x, comp Insert::t:::x, comp Find::l::127:x, comp Add::l:p:122:p}, space :::p, par l:::p {seq {comp Search:::p:125:p, space :::p, comp Delete_some:::p::p}, comp search_txt::l::206:x, comp insert_txt::l::206:x, comp delete_txt::l::206:x}}, seq {par t {seq {space :6:6:p, comp label1:::p::p, space :::p, comp Action::::231:x}, seq t {comp words:::p:83:p, space :::p, comp height:::p:84:p, space :::p, comp printing::::154:x}}, space :::p}}}}"
+				"$verticalGroup": "par l {seq l {space u:::p, par b {comp Add::b:p::p, comp Search::b:p::p, comp Delete_some::b:p::p}, space :::p, par l {comp Insert:::p::p, comp insert_txt:::::x}, space :::p, par t {comp Find:::p::p, comp search_txt:::p:32:p}, space :::p, par l {comp Remove:::p::p, comp delete_txt:::::x}, space :::p, par b {comp words::b:p:28:p, comp height::b:p::p, comp printing::b:p::p}, space :::p, par b {comp label1::b:p::p, comp Action::b:p::p}, space :p:42:p}}"
 			} ) {
 				name: "but_panel"
 				"foreground": sfield java.awt.Color darkGray
@@ -47,7 +47,7 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "words"
-					"text": "number of words"
+					"text": "Size"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "wordsActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -76,6 +76,11 @@ new FormModel {
 					name: "Add"
 					"text": "Add Dictionery"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "AddActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "printing"
+					"text": "Print Content"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "printingActionPerformed", true ) )
 				} )
 			}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
 				"width": 345
