@@ -8,6 +8,8 @@ import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * @author k y
@@ -25,6 +27,7 @@ public class Avl_Gui extends JFrame {
         dic.addFileToDictionary();
         Action.setText("Add");
         Add.setEnabled(false);
+
     }
 
     private void SearchActionPerformed(ActionEvent e) {
@@ -81,6 +84,21 @@ public class Avl_Gui extends JFrame {
     private void printingActionPerformed(ActionEvent e) {
         // TODO add your code here
         dic.inOrderTraversal(avl.getRoot());
+        AVLTREE();
+}
+    private void AVLTREE(){
+        JFrame f = new JFrame("AVL Tree");
+        f.addWindowListener(new WindowAdapter() {
+            //  public void windowClosing(WindowEvent e) { }
+        });
+        Drawtree applet = new Drawtree();
+        f.getContentPane().add("Center", applet);
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        int xSize = ((int) tk.getScreenSize().getWidth());
+        applet.init(avl.getRoot(),xSize-50);
+        f.pack();
+        f.setSize(new Dimension(xSize,500));
+        f.setVisible(true);
     }
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - k y

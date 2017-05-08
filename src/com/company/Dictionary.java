@@ -12,12 +12,13 @@ public class Dictionary {
     private Scanner scan;
 private Avl_Gui gui;
 
+    public Dictionary() {
+    }
+
     public Dictionary(Avl_Gui gui) {
         this.gui = gui;
     }
 
-    public Dictionary() {
-    }
 
     public void setTree(AvlTree tree) {this.tree = tree;}
 

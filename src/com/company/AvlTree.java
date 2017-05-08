@@ -11,6 +11,9 @@ public class AvlTree <type extends Comparable<? super type>> {
     public AvlNode<type> getRoot() {
         return root;
     }
+    public type rootdata() {
+        return root.data;
+    }
 
     public void insert(type data) {
         root = insert(data, root);

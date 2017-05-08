@@ -5,7 +5,6 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 			name: "this"
-			"resizable": false
 			"minimumSize": new java.awt.Dimension( 10, 30 )
 			"defaultCloseOperation": 3
 			"$sizePolicy": 1
